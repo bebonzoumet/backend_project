@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @RequestMapping("/")
 public class TaskController {
-    
+
     @Autowired
     private TaskRepository repository;
 
@@ -44,7 +44,7 @@ public class TaskController {
 
         //Inserção no banco de dados
         repository.save(task);
-        
+
         return "redirect:/";
     }
 
@@ -78,13 +78,7 @@ public class TaskController {
         task.setStatus(newData.getStatus());
 
         repository.save(task);
-        
+
         return "redirect:/";
     }
-    
-    
-    
-    
-    
-    
 }

@@ -1,0 +1,32 @@
+<html>
+
+<head th:replace="~{header::header}"></head>
+
+<body>
+    <h1>Listagem de usuários</h1>
+    <a href="/user/create">Criar Usuário</a>
+    <br />
+    <br />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Nome</td>
+                <td>Tasks</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${listaUser}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.tasks}"></td>
+                <!-- <td>
+                    <a th:href="@{/edit/{id}(id=${task.id})}">Editar</a>
+                    <a th:href="@{/delete/{id}(id=${task.id})}">Excluir</a>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
